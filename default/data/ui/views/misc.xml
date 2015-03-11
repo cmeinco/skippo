@@ -1,0 +1,45 @@
+<form>
+  <label>Intel Export</label>
+  <description>Export the Intel</description>
+  <fieldset autoRun="true" submitButton="false">
+    <input type="time" searchWhenChanged="true">
+      <default/>
+    </input>
+  </fieldset>
+  <row>
+    <table>
+      <title>Rare Passwords</title>
+      <searchString>`kippo` userid=* status=failed | rare password | sort + percent | head 10 | table password percent</searchString>
+      <earliestTime>-30d@d</earliestTime>
+      <latestTime>now</latestTime>
+    </table>
+  </row>
+  <row>
+    <table>
+      <title>wget URL Hosts</title>
+      <searchString>`kippo` wget_url=* wget_file_localpath=* | rex mode=sed field=wget_url "s/^(http:\/\/)//g" | rex field=wget_url "^(?&lt;wget_url_host&gt;[^/^:]+)[/:]" | stats count by wget_url_host</searchString>
+      <earliestTime>-30d@d</earliestTime>
+      <latestTime>now</latestTime>
+    </table>
+  </row>
+  <row>
+    <table>
+      <title>Password Wordlist</title>
+      <searchString>`kippo` userid=* | dedup password | table password</searchString>
+      <earliestTime>$earliest$</earliestTime>
+      <latestTime>$latest$</latestTime>
+      <option name="list.drilldown">full</option>
+      <option name="list.wrap">1</option>
+      <option name="maxLines">5</option>
+      <option name="raw.drilldown">full</option>
+      <option name="rowNumbers">false</option>
+      <option name="table.drilldown">1</option>
+      <option name="table.wrap">1</option>
+      <option name="type">list</option>
+      <option name="wrap">true</option>
+      <option name="dataOverlayMode">none</option>
+      <option name="drilldown">none</option>
+      <option name="count">10</option>
+    </table>
+  </row>
+</form>

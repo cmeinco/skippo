@@ -1,0 +1,35 @@
+<nav search_view="search" color="#3AA6C9"> <!-- color="#65A637" -->
+  <view name="overview" default="true" />
+  <view name="kippo_graph" />
+  <view name="misc" />
+  <view name="troubleshooting" />
+  <view name="search" />
+
+  <collection label="Views">
+    <view name="data_models" />
+    <view name="reports" />
+    <view name="alerts" />
+    <view name="dashboards" />
+  </collection>
+
+  <collection label="External Links">
+    <a href="https://code.google.com/p/kippo/">Download Kippo</a>
+    <a href="http://bruteforce.gr/kippo-graph">Kippo Graph</a>
+	<a href="http://www.tekdefense.com/news/tag/kippo">TekDefense Kippo</a>
+    
+  </collection>
+
+  
+  <!--
+  <collection label="Dashboard">
+    <view name="mydashboard" />
+  </collection>
+  <collection label="Search views">
+    <view name="mysearchview" default="true" />
+    <view name="anothersearchview" default="true" />
+  </collection>
+  <collection label="Others">
+    <view source="unclassified" />
+  </collection>
+  -->
+</nav>

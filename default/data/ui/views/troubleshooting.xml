@@ -1,0 +1,25 @@
+<dashboard>
+  <label>HoneyPot Ops</label>
+  <description>Troubleshooting issues with the Kippo HoneyPot</description>
+  <row>
+    <chart>
+      <title>Unknown Command Count</title>
+      <searchString>| pivot kippo_honeypot kippo_unknown_command count(kippo_unknown_command) AS "Count of Unknown Commands" SPLITROW _time AS "_time" PERIOD day FILTER command is * SORT 0 _time</searchString>
+      <earliestTime>0</earliestTime>
+      <latestTime>$latest$</latestTime>
+      <option name="charting.axisY.scale">linear</option>
+      <option name="charting.axisX.scale">linear</option>
+      <option name="charting.legend.placement">none</option>
+      <option name="charting.legend.labelStyle.overflowMode">ellipsisEnd</option>
+      <option name="charting.chart.stackMode">default</option>
+      <option name="charting.chart.nullValueMode">gaps</option>
+      <option name="charting.chart.sliceCollapsingThreshold">0.01</option>
+      <option name="charting.chart.style">shiny</option>
+      <option name="charting.axisTitleX.visibility">collapsed</option>
+      <option name="charting.axisTitleY.visibility">visible</option>
+      <option name="charting.chart">column</option>
+      <option name="charting.drilldown">all</option>
+      <option name="charting.layout.splitSeries">0</option>
+    </chart>
+  </row>
+</dashboard>
